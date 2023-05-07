@@ -1,23 +1,24 @@
 <template>
-  <div class="greetings">
-    <header>
+  <div>
+    <header :class="{ 'my-class': isToggled }">
         <nav>
-            <div class="links">
-                <a class="nav-logo" href="#">
-                    <img src="images/Logo.svg" alt="">
+            <div class="links" ref="myElement">
+                <a class="nav-logo" href="#" >
+                    <img src="@/assets/images/Logo.svg" alt="">
                 </a>
-                <div class="cont-links">
+                <div class="cont-links cont-move" >
                     <a href="#" >FOREX</a>
                     <a href="#" >STOCKS</a>
                     <a href="#" >FUTURES</a>
                     <a href="#" >TradeGATEHub</a>
                 </div>
+                <button @click="toggleClass" class="btn-toggle"><div></div><div></div><div></div></button>
             </div>
-            <div class="login">
+            <div class="login cont-move" >
                 <ul class="nav-ul">
                     <li class="nav-li">
                         <a href="#" data-toggle="sub-menu" class="nav-link">Log in
-                            <img src="images/arrow.svg" alt="">
+                            <img src="@/assets/images/arrow.svg" alt="">
                         </a>
                         <ul class="sub-ul">
                             <li class="nav-li">
@@ -32,39 +33,32 @@
                         </ul>
                     </li>
                     <li class="nav-li">
-                        <a href="#" class="nav-link">home</a>
+                        <a href="#" class="nav-link">Contact Us</a>
                     </li>
                     <li class="nav-li">
-                        <a href="#" data-toggle="sub-menu" class="nav-link">Pricing
-                            <img src="images/world-icon.svg" alt="">
-                            <img src="images/arrow.svg" alt="">
+                        <a href="#" data-toggle="sub-menu" class="nav-link">English
+                            <img src="@/assets/images/world-icon.svg" alt="">
+                            <img src="@/assets/images/arrow.svg" alt="">
                         </a>
                         <ul class="sub-ul">
                             <li class="nav-li">
-                            <a href="#" class="nav-link">Project 1</a>
+                            <a href="#" class="nav-link">French</a>
                             </li>
                             <li class="nav-li">
-                            <a href="#" class="nav-link">Project 2</a>
-                            </li>
-                            <li class="nav-li">
-                            <a href="#" class="nav-link">Project 3</a>
+                            <a href="#" class="nav-link">Spanish</a>
                             </li>
                         </ul>
                     </li>
                 </ul>
             </div>
         </nav>
-        <nav class="nav-container">
-            <div class="hamberger-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
-                    <path fill="#FFFFFF" d="M3 18h13v-2H3v2zm0-5h10v-2H3v2zm0-7v2h13V6H3zm18 9.59L17.42 12L21 8.41L19.59 7l-5 5l5 5L21 15.59z"></path>
-                  </svg>
-            </div>
-            <ul class="nav-ul">
-                <li class="nav-li">
+        <div class="back"></div>
+        <nav class="nav-container" >
+            <ul class="nav-ul" >
+                <li  class="nav-li">
                     <a href="#" class="nav-link ">Markets</a>
                 </li>
-                <li class="nav-li">
+                <li  class="nav-li">
                     <a href="#" data-toggle="sub-menu" class="nav-link ">Company
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
                         <path fill="#FFFFFF" d="M8.12 9.29L12 13.17l3.88-3.88a.996.996 0 1 1 1.41 1.41l-4.59 4.59a.996.996 0 0 1-1.41 0L6.7 10.7a.996.996 0 0 1 0-1.41c.39-.38 1.03-.39 1.42 0z"></path>
@@ -136,23 +130,29 @@
   </div>
 </template>
 
-<script setup>
-(() => {
-    const navUl = document.querySelector(".nav-ul"),
-      hambergerBtn = document.querySelector(".hamberger-btn");
-    hambergerBtn.addEventListener("click", toggleMenu);
-    navUl.addEventListener("click", toggleSubMenu);
-    function toggleMenu() {
-      hambergerBtn.children[0].classList.toggle("rotate");
-      navUl.classList.toggle("show");
+<script>
+export default {
+  data() {
+    return {
+      isToggled: false
     }
-  
-    function toggleSubMenu(e) {
-      if (e.target.hasAttribute("data-toggle")) {
-        e.target.nextElementSibling.classList.toggle("active");
-      }
+  },
+  methods: {
+    toggleClass() {
+      this.isToggled = !this.isToggled;
     }
-  })();
+  }
+
+}
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 991) {
+    const elementoAMover = document.querySelector('.cont-move');
+    const contenedorOrigen = document.querySelector('.links');
+    const contenedorDestino = document.querySelector('.nav-container');
+    contenedorDestino.appendChild(elementoAMover);
+    }
+});
 </script>
 
 <style scoped>
@@ -161,11 +161,12 @@ header {
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 0px 52px 57px;
+    padding: 30px 50px 57px;
     flex-direction: column;
     gap: 25px;
-    z-index: 1;
+    z-index: 1000;
     position: relative;
+    overflow: hidden;
 }
 
 nav:nth-child(1) {
@@ -179,6 +180,11 @@ nav:nth-child(1) {
     align-items: center;
     justify-content: space-between;
     width: 50%;
+    gap: 50px;
+}
+
+.btn-toggle {
+    display: none;
 }
 
 .cont-links {
@@ -191,9 +197,12 @@ nav:nth-child(1) {
 .cont-links a {
     color: white;
     font-weight: 900;
+    letter-spacing: 3px;
+    transition: color 0.5s;
+    font-size: 18px;
 }
 
-.cont-links a.slide-horizontal .char::before {
+.cont-links a:hover {
     color: red;
 }
 
@@ -203,7 +212,7 @@ nav:nth-child(1) {
 }
 
 .login .nav-ul {
-    gap: 0px;
+    gap: 30px;
     position: relative;
 }
 
@@ -223,7 +232,7 @@ nav:nth-child(1) {
     height: 21px;
     background: white;
     position: absolute;
-    right: 0px;
+    right: -15px;
     opacity: 0.5;
 }
 
@@ -252,6 +261,10 @@ nav:nth-child(1) {
     width: 60px;
     height: 60px;
     padding: 10px;
+}
+
+.nav-logo img {
+    max-width: 350px;
 }
 
 .logo-text {
@@ -294,7 +307,9 @@ nav:nth-child(1) {
 .nav-ul {
     display: flex;
     align-items: center;
-    gap: 40px;
+    width: 100%;
+    max-width: 1565px;
+    justify-content: space-between;
 }
 
 .nav-li {
@@ -316,7 +331,8 @@ nav:nth-child(1) {
 }
 
 .nav-link {
-    padding: 15px;
+    padding: 20px 0;
+    font-size: 20px;
 }
 
 .nav-link, .nav-link svg {
@@ -326,7 +342,7 @@ nav:nth-child(1) {
     display: flex;
     align-items: center;
     gap: 2px;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .nav-link:hover {
@@ -374,91 +390,163 @@ nav:nth-child(1) {
     background-color: rgb(52, 70, 93);
 }
 
-.splitting .word, .splitting .char {
-    display: inline-block;
+.back {
+    display: none;
 }
 
-.splitting .char {
-    position: relative;
+@media (max-width: 1500px) {
+    header {
+        gap: 5px;
+    }
+    .login {
+        padding-right: 0;
+    }
 }
 
-.splitting .char::before, .splitting .char::after {
-    content: attr(data-char);
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    visibility: hidden;
-    transition: inherit;
-    user-select: none;
+@media (max-width: 1350px) {
+    header {
+        padding: 15px 30px 57px;
+    }
+    .nav-link, .nav-link svg {
+        font-size: 16px;
+        padding: 0px 0;
+    }
+    .cont-links a {
+        font-size: 16px;
+    }
+    .nav-logo img {
+        max-width: 250px;
+    }
 }
 
-.splitting {
-    --word-center: calc((var(--word-total) - 1) / 2);
-    --char-center: calc((var(--char-total) - 1) / 2);
-    --line-center: calc((var(--line-total) - 1) / 2);
+@media (max-width: 1150px) {
+    .cont-links {
+        display: flex;
+        gap: 15px;
+    }
+    .login .nav-ul {
+        gap: 20px;
+    }
+    .login .nav-ul li:first-child a::before {
+        right: -10px;
+    }
+    .cont-links a {
+        font-size: 16px;
+        letter-spacing: 1px;
+    }
+    .links {
+        gap: 25px;
+    }
 }
+@media (max-width: 991px) {
+    .nav-container {
+        background: rgb(24, 31, 41);
+        gap: 40px;
+        display: flex;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        justify-content: flex-start;
+        padding: 46px;
+        right: 0;
+        max-width: 320px;
+        width: 100%;
+        transform: translateX(250%);
+        transition: transform 0.5s;
+        overflow-y: auto;
+        flex-direction: column;
+        overflow-y: scroll;
+    }
+    header.my-class .nav-container {
+        transform: translateX(0%);
+    }
+    .back {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: #00000087;
+        display: flex;
+        transform: translateX(250%);
+        transition: transform 0.5s;
+    }
+    header.my-class .back {
+        transform: translateX(0%);
+    }
+    .login .nav-ul li:first-child a[data-v-e065371e]::before {
+        display: none;
+    }
+    .nav-ul, .login .nav-ul, .cont-links {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+        width: 100%;
+    }
+    .login {
+        width: 100%;
+    }
+    .btn-toggle {
+        display: block;
+        font-size: 0;
+        z-index: 1;
+    }
 
-.splitting .word {
-    --word-percent: calc(var(--word-index) / var(--word-total));
-    --line-percent: calc(var(--line-index) / var(--line-total));
-}
+    .links[data-v-e065371e] {
+        width: 100%;
+    }
 
-.splitting .char {
-    --char-percent: calc(var(--char-index) / var(--char-total));
-    --char-offset: calc(var(--char-index) - var(--char-center));
-    --distance: calc( (var(--char-offset) * var(--char-offset)) / var(--char-center) );
-    --distance-sine: calc(var(--char-offset) / var(--char-center));
-    --distance-percent: calc((var(--distance) / var(--char-center)));
-}
+    .btn-toggle {
+        font-size: 0;
+        background: transparent;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
 
-.slide-vertical .char, .slide-horizontal .char {
-    overflow: hidden;
-    color: transparent;
-}
+    .btn-toggle div {
+        display: flex;
+        width: 25px;
+        height: 2px;
+        background: white;
+    }
 
-.slide-vertical .char::before, .slide-horizontal .char::before, .slide-vertical .char::after, .slide-horizontal .char::after {
-    visibility: visible;
-    color: rgb(255, 255, 255);
-    transition-duration: 0.5s;
-    transition-timing-function: cubic-bezier(0.9, 0, 0.2, 1);
-    transition-property: transform;
-    transition-delay: calc(0.2s + ( 0.02s * ( var(--char-index)) ));
-}
+    .sub-ul {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: all 0.3s linear 0s;
+        position: relative;
+        top: 0;
+        background-color: rgb(40, 50, 60);
+        width: 100%;
+        max-width: 100%;
+        transform: translateY(0px);
+        height: 0;
+        margin-top: 0;
+    }
+    .sub-ul .nav-li a {
+        padding: 10px 18px;
+    }
 
-.slide-vertical .char::before, .slide-horizontal .char::before {
-    color: white;
-    transition-delay: calc(0.02s * ( var(--char-index)));
-}
+    .nav-li:hover > .sub-ul {
+        margin-top: 10px;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0px);
+        height: fit-content;
+    }
 
-.slide-vertical:hover .char::before, .slide-horizontal:hover .char::before {
-    transition-delay: calc(0.2s + ( 0.02s * ( var(--char-index)) ));
-}
+    .nav-li {
+        height: auto;
+        width: 100%;
+    }
 
-.slide-vertical:hover .char::after, .slide-horizontal:hover .char::after {
-    transition-delay: calc(0.02s * ( var(--char-index)));
-}
-
-.slide-vertical .char::before {
-    transform: translateY(-100%);
-}
-
-.slide-vertical:hover .char::before {
-    transform: translateY(0%);
-}
-
-.slide-vertical:hover .char::after {
-    transform: translateY(100%);
-}
-
-.slide-horizontal .char::before {
-    transform: translateX(110%);
-}
-
-.slide-horizontal:hover .char::before {
-    transform: translateX(0%);
-}
-
-.slide-horizontal:hover .char::after {
-    transform: translateX(-110%);
+    @media (max-width: 425px){
+        .nav-logo img {
+            max-width: 204px;
+        }
+    }
 }
 </style>

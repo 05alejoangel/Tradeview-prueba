@@ -4,7 +4,7 @@
             <section class="contact-us">
                 <div class="contact_">
                     <a class="fot-logo" href="#">
-                        <img src="images/logo-white.png" alt="">
+                        <img src="@/assets/images/logo-white.png" alt="">
                     </a>
                     <div class="info_">
                         <p><strong>Tradeview Markets</strong> | Grand Cayman, KY1-1002, 4th Floor Harbour Place | 103 South Church St, PO Box 1105</p>
@@ -15,18 +15,18 @@
                     <div class="social">
                         <h2>FIND US ON:</h2>
                         <div class="item">
-                            <a href="#"><img src="images/icontwiter.svg" alt=""></a>
-                            <a href="#"><img src="images/iconfacebook.svg" alt=""></a>
-                            <a href="#"><img src="images/iconin.svg" alt=""></a>
-                            <a href="#"><img src="images/iconinst.svg" alt=""></a>
-                            <a href="#"><img src="images/iconyou.svg" alt=""></a>
+                            <a href="#"><img src="@/assets/images/icontwiter.svg" alt=""></a>
+                            <a href="#"><img src="@/assets/images/iconfacebook.svg" alt=""></a>
+                            <a href="#"><img src="@/assets/images/iconin.svg" alt=""></a>
+                            <a href="#"><img src="@/assets/images/iconinst.svg" alt=""></a>
+                            <a href="#"><img src="@/assets/images/iconyou.svg" alt=""></a>
                         </div>
                     </div>
                 </div>
                 <div class="mail_links">
                     <div class="mail" >
                         <div class="descrpt_">
-                            <img src="images/icon-surfs.svg" alt="">
+                            <img src="@/assets/images/icon-surfs.svg" alt="">
                             <p>Find daily trading insights and understand what is behind the latest waves in financial markets.</p>
                         </div>
                         <div class="send">
@@ -110,7 +110,7 @@
                         <a href="">Tradeview Ltd.</a>
                         <p>Is licensed to carry on securities investment business and is regulated by the Cayman Islands Monetary Authority (CIMA) as a full securities broker-dealer. (License #585163) Tradeview conducts business pursuant to the Cayman Islands Securities Investment Business Law (SIBL) and its activities fall under the direct supervision of the Investments and Securities Division of CIMA</p>
                         <p><strong>Headquarters:</strong> Grand Cayman, KY1-1002, 4th Floor Harbour Place | 103 South Church St, PO Box 1105.</p>
-                        <p><strong>Website:</strong><a href="#">www.tradeviewforex.com</a></p>
+                        <p><strong>Website: </strong><a href="#">www.tradeviewforex.com</a></p>
                     </div>
                     <div class="item">
                         <a href="">Tradeview Europe Ltd.</a>
@@ -122,7 +122,7 @@
                         <a href="">iLC Brokers Ltd.</a>
                         <p>iLC Brokers Ltd. is authorized under the Mauritius Financial Service Commission with a Global Business License and Investment Dealer License #GB20025800 to provide financial services to professional and non-professional clients.</p>
                         <p><strong>Headquarters:</strong> 6 St. Denis Street, 1/F River Court, Port Louis 11328 Mauritius.</p>
-                        <p><strong>Website:</strong><a href="#">www.ilcbrokers.com</a></p>
+                        <p><strong>Website: </strong><a href="#">www.ilcbrokers.com</a></p>
                     </div>
                 </div>
                 <div class="conte">
@@ -130,19 +130,19 @@
                         <a href="">TVM Global Ltd.</a>
                         <p>Is licensed and regulated by the Labuan Financial Services Authority (FSA) as a Money Broker, registration number LL15870 licensed to facilitate transactions in foreign exchange pursuant to Labuan Financial Services and Securities Act 2010, the Labuan Companies Act 1990 and the Labuan Business Activity Tax Act 1990.</p>
                         <p><strong>Headquarters:</strong> International Business Financial Centre at Office 5, Jamie Business Center I, Unit F10, First Floor, Paragon Labuan, Jalan Mustapha, 87000 Labuan F.T.</p>
-                        <p><strong>Website:</strong><a href="#">www.tvmgloballtd.com</a></p>
+                        <p><strong>Website: </strong><a href="#">www.tvmgloballtd.com</a></p>
                     </div>
                     <div class="item">
                         <a href="">Tradeview Financial Markets S.A.C Global</a>
                         <p>Is authorized to conduct business pursuant to and in compliance with the General Law of Companies (LGS) promulgated by the government of Peru. Tradeview Financial Markets S.A.C is registered with the National Superintendence of Public Registries (SUNARP), company number 13089531. Tradeview Financial Markets S.A.C provides financial services in selected OTC derivative markets in compliance with all applicable government regulations.</p>
                         <p><strong></strong> Los Mirtos 239 Urb. San Eugenio, Lince, Lima, Perú</p>
-                        <p><strong>Website:</strong><a href="#">www.tradeviewlatam.com</a></p>
+                        <p><strong>Website: </strong><a href="#">www.tradeviewlatam.com</a></p>
                     </div>
                     <div class="item">
                         <a href="">TVCM Limited (Tradeview UK)</a>
                         <p>Is a limited company registered in England & Wales under Company Number 08648747 and is authorised and regulated by the Financial Conduct Authority FRN: 990586 </p>
                         <p><strong>Headquarters:</strong> 85 Great Portland Street, London W1W 7LT.</p>
-                        <p><strong>Website:</strong><a href="#"> www.tradeview.co.uk</a></p>
+                        <p><strong>Website: </strong><a href="#"> www.tradeview.co.uk</a></p>
                     </div>
                 </div>
             </section>
@@ -155,9 +155,7 @@
 </script>
   
 <style scoped>
-    /* =======================================================
-                            FOOTER
-    ======================================================= */
+    
     footer {
         background: #3C3E48;
         display: flex;
@@ -172,6 +170,7 @@
         max-width: 1490px;
         justify-content: space-between;
         padding-bottom: 35px;
+        gap: 25px;
     }
 
     .contact-us .contact_ {
@@ -257,7 +256,7 @@
         height: 100%;
         background: white;
         position: absolute;
-        left: 30%;
+        left: 221px;
     }
 
     .mail_links .descrpt_ p {
@@ -357,6 +356,7 @@
 
     .information_ {
         max-width: 1490px;
+        width: 100%;
     }
 
     .information_ .item {
@@ -387,6 +387,8 @@
     .information_ .info-links_ {
         display: flex;
         gap: 25px;
+        flex-wrap: wrap;
+        row-gap: 5px;
     }
 
     .information_ .item a {
@@ -399,14 +401,14 @@
         content: "";
         height: 80%;
         position: absolute;
-        left: -12px;
+        right: -12px;
         width: 1px;
         background: white;
         transform: translateY(-50%);
         top: 50%;
     }
 
-    .information_ .item a:first-child::before {
+    .information_ .item a:last-child::before {
         display: none;
     }
 
@@ -416,6 +418,7 @@
         gap: 100px;
         padding: 65px 0;
         position: relative;
+        width: 100%;
     }
 
     .info-gen::before {
@@ -445,6 +448,98 @@
         font-size: 21px;
         text-decoration: revert;
         color: white;
+    }
+
+    @media (max-width: 1550px) {
+        .contact-us .contact_ {
+            max-width: 30%;
+        }
+        .mail_links {
+            width: 100%;
+            max-width: 70%;
+        }
+    }
+
+    @media (max-width: 991px) {
+        .contact-us {
+            flex-direction: column;
+        }
+        .contact-us .contact_ {
+            max-width: 100%;
+        }
+        .mail_links {
+            width: 100%;
+            max-width: 100%;
+        }
+        .info-gen {
+            flex-direction: column;
+        }
+        .info-gen .conte {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .mail_links .descrpt_ {
+            gap: 25px;
+            flex-direction: column;
+            display: flex;
+            align-items: flex-start;
+        }
+        .mail_links .mail {
+            gap: 25px;
+        }
+        .mail_links .descrpt_::before {
+            display: none;
+        }
+        .mail_links .links {
+            flex-direction: column;
+            gap: 50px;
+        }
+        .mail_links .links .market, .mail_links .links .history-platform {
+            width: 100%;
+        } 
+        .mail_links .links .history-platform {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+        }
+        .mail_links .links .history-platform .item h2 {
+            min-height: 40px;
+        }
+        .mail_links .send {
+            flex-direction: column;
+        }
+        .mail_links .send input {
+            width: 100%;
+        }
+        .mail_links .send button {
+            width: 100%;
+            padding: 15px;
+        }
+    }
+
+    @media (max-width: 580px) {
+        footer {
+            padding: 50px;
+        }
+        .mail_links .links .history-platform {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            row-gap: 50px;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .mail_links .mail[data-v-4896eafd] {
+            padding: 20px;
+        }
+    }
+
+    @media (max-width: 425px) {
+        footer {
+            padding: 35px;
+        }
     }
   </style>
   

@@ -3,11 +3,11 @@
       <section class="banner">
             <div class="content">
                 <div class="img_">
-                    <div style="background-image: url(images/banner.jpg);"></div>
+                    <div></div>
                 </div>
                 <div class="descript">
                     <div class="img_">
-                        <div style="background-image: url(images/title.png);"></div>
+                        <div></div>
                     </div>
                     <div class="cont">
                         <p>Tradeview’s <strong>CommuniTraders</strong> software lets our partners provide value-added copy trading to their clients.</p>
@@ -51,10 +51,12 @@
 }
 
 .banner .content .img_ div {
+    background-image: url('../assets/images/banner.jpg');
     width: 100%;
     padding-top: 128%;
     background-repeat: no-repeat;
     background-position: center center;
+    background-size: contain;
 }
 
 .banner .descript {
@@ -78,6 +80,7 @@
     padding-top: 33%;
     background-repeat: no-repeat;
     background-position: center center;
+    background-image: url('../assets/images/title.png');
 }
 
 .banner .descript .cont {
@@ -159,13 +162,6 @@
 
 .dark {
     background: rgb(36, 37, 42);
-}
-
-.flex {
-    min-height: 50vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 a.bttn {
@@ -258,37 +254,143 @@ a.bttn-dark:focus {
     opacity: 1;
 }
 
-.card {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 100px;
-    gap: 25px;
+@media (max-width: 1500px) {
+    .banner {
+        margin-top: -142px;
+    }
 }
 
-.card .item {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 521px;
-    padding: 25px;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 13px 8px;
-    height: 260px;
+@media (max-width: 1350px) {
+    .banner .descript {
+        padding: 35px;
+    }
+    .banner {
+        margin-top: -111px;
+    }
 }
 
-.card img {
-    width: 50px;
+@media (max-width: 1200px) {
+    .banner .descript .img_ div {
+        padding-top: 20%;
+    }
+    .banner .descript .cont p {
+        font-size: 23px;
+    }
+    .banner .links {
+        justify-content: space-between;
+    }
+    .banner .links::before {
+        left: 49.6%;
+    }
+    .links .btn_ {
+        padding: 0 25px;
+    }
+    .links .btn_ a {
+        font-size: 16px;
+        padding: 11px 15px;
+    }
 }
 
-.card h2 {
-    font-size: 18px;
-    color: rgb(255, 0, 0);
+@media (max-width: 991px) {
+    .banner .content .img_ {
+        display: flex;
+        width: 41%;
+    }
+    .banner .descript {
+        gap: 15px;
+        width: 59%;
+        padding: 76px 35px 35px;
+    }
+    .banner .links {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    .links .btn_ {
+        padding: 0;
+        gap: 8px;
+        max-width: 315px;
+        width: 100%;
+    }
+    .banner .links::before {
+        display: none;
+    }
+    .links .btn_ a {
+        font-size: 15px;
+        padding: 8px 13px;
+        max-width: 100%;
+    }
+    .banner .descript .cont p {
+        font-size: 20px;
+        line-height: 24px;
+    }
+    .banner .descript .img_ div {
+        padding-top: 37%;
+    }
+    .banner .descript .cont::before {
+        top: -7px;
+    }
+    .banner .descript {
+        gap: 27px;
+    }
+    .links .btn_ p {
+        font-size: 14px;
+    }
 }
 
-.card p {
-    font-size: 18px;
-    color: rgb(54, 54, 54);
-    font-weight: 300;
+@media (max-width: 767px) {
+    .banner .content {
+        display: flex;
+        flex-direction: column;
+    }
+    .banner .content .img_ {
+        display: flex;
+        width: 100%;
+    }
+
+    .banner .descript {
+        width: 100%;
+    }
+    .banner .descript .img_ div {
+        padding-top: 16%;
+    }
+    .banner .descript {
+        width: 100%;
+        padding: 70px;
+        gap: 40px;
+    }
+    .banner .descript .cont::before {
+        top: -17px;
+    }
+    .links .btn_ {
+        padding: 0;
+        gap: 8px;
+        width: 100%;
+        max-width: 315px;
+        gap: 20px;
+    }
+    .banner .links {
+        flex-direction: column;
+        gap: 32px;
+    }
+    .banner .descript {
+        margin-top: -95px;
+    }
+    .banner {
+        margin-top: -45%;
+    }
 }
+
+@media (max-width: 425px) {
+    .banner .descript {
+        padding: 50px 25px;
+    }
+    .banner .descript .img_ div {
+        padding-top: 20%;
+    }
+    .banner .descript {
+        margin-top: -40px;
+    }
+}
+
   </style>
