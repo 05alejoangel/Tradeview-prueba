@@ -137,6 +137,16 @@ export default {
       isToggled: false
     }
   },
+  mounted () {
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 991) {
+        const elementoAMover = document.querySelector('.cont-move');
+        const contenedorOrigen = document.querySelector('.links');
+        const contenedorDestino = document.querySelector('.nav-container');
+        contenedorDestino.appendChild(elementoAMover);
+        }
+    });
+  },
   methods: {
     toggleClass() {
       this.isToggled = !this.isToggled;
@@ -145,14 +155,7 @@ export default {
 
 }
 
-window.addEventListener('resize', () => {
-    if (window.innerWidth > 991) {
-    const elementoAMover = document.querySelector('.cont-move');
-    const contenedorOrigen = document.querySelector('.links');
-    const contenedorDestino = document.querySelector('.nav-container');
-    contenedorDestino.appendChild(elementoAMover);
-    }
-});
+
 </script>
 
 <style scoped>
@@ -541,7 +544,7 @@ nav:nth-child(1) {
         height: auto;
         width: 100%;
     }
-    .links[data-v-0c7a157d] {
+    .links {
         gap: 25px;
         width: 100%;
     }
