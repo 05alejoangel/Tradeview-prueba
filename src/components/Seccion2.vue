@@ -53,7 +53,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    max-width: 600px;
+    max-width: 495px;
     padding: 25px;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 13px 8px;
     height: 260px;
