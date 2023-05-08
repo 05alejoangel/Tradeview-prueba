@@ -166,7 +166,6 @@ header {
     gap: 25px;
     z-index: 1000;
     position: relative;
-    overflow: hidden;
 }
 
 nav:nth-child(1) {
@@ -308,7 +307,7 @@ nav:nth-child(1) {
     display: flex;
     align-items: center;
     width: 100%;
-    max-width: 1565px;
+    max-width: 1250px;
     justify-content: space-between;
 }
 
@@ -332,7 +331,7 @@ nav:nth-child(1) {
 
 .nav-link {
     padding: 20px 0;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .nav-link, .nav-link svg {
@@ -373,7 +372,7 @@ nav:nth-child(1) {
     top: 100%;
     background-color: rgb(40, 50, 60);
     width: 100%;
-    max-width: 200px;
+    max-width: 150px;
 }
 
 .sub-ul .nav-li a {
@@ -542,11 +541,14 @@ nav:nth-child(1) {
         height: auto;
         width: 100%;
     }
-
-    @media (max-width: 425px){
+    .links[data-v-0c7a157d] {
+        gap: 25px;
+        width: 100%;
+    }
+}
+@media (max-width: 425px){
         .nav-logo img {
             max-width: 204px;
         }
     }
-}
 </style>
