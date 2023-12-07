@@ -1,6 +1,13 @@
 <template>
   <div>
-    <header :class="{ 'my-class': isToggled }">
+    <div class="btn_movil">
+        <a class="nav-logo" href="#" >
+            <img src="@/assets/images/Logo.svg" alt="">
+        </a>
+        <button @click="toggleClass" class="btn-toggle"><div></div><div></div><div></div></button>
+    </div>
+    <div class="back" :class="{ 'my-class': isToggled }"></div>
+    <header class="nav-movil" :class="{ 'my-class': isToggled }">
         <nav>
             <div class="links" ref="myElement">
                 <a class="nav-logo" href="#" >
@@ -12,7 +19,6 @@
                     <a href="#" >FUTURES</a>
                     <a href="#" >TradeGATEHub</a>
                 </div>
-                <button @click="toggleClass" class="btn-toggle"><div></div><div></div><div></div></button>
             </div>
             <div class="login cont-move" >
                 <ul class="nav-ul">
@@ -52,7 +58,6 @@
                 </ul>
             </div>
         </nav>
-        <div class="back"></div>
         <nav class="nav-container" >
             <ul class="nav-ul" >
                 <li  class="nav-li">
@@ -138,29 +143,31 @@ export default {
     }
   },
   mounted () {
-    window.addEventListener('resize', () => {
-        if (window.innerWidth > 991) {
-        const elementoAMover = document.querySelector('.cont-move');
-        const contenedorOrigen = document.querySelector('.links');
-        const contenedorDestino = document.querySelector('.nav-container');
-        contenedorDestino.appendChild(elementoAMover);
-        }
-    });
+    // window.addEventListener('resize', () => {
+    //     if (window.innerWidth > 991) {
+    //     const elementoAMover = document.querySelector('.cont-move');
+    //     const contenedorOrigen = document.querySelector('.links');
+    //     const contenedorDestino = document.querySelector('.nav-container');
+    //     contenedorDestino.appendChild(elementoAMover);
+    //     }
+    // });
   },
   methods: {
-    toggleClass() {
+    toggleClass () {
       this.isToggled = !this.isToggled;
+      // Obtén el cuerpo del documento
+      const body = document.body;
+
+      // Toggle de la clase 'mi-clase' en el cuerpo
+      body.classList.toggle('overflow-body');
     }
   }
-
 }
-
-
 </script>
 
 <style scoped>
 header {
-    background: linear-gradient(rgb(24, 31, 41) 0%, rgb(24, 31, 41) 46%, rgba(24, 31, 41, 0) 100%);
+    background: linear-gradient(rgb(24, 31, 41) 0%, rgb(24, 31, 41) 54%, rgba(24, 31, 41, 0) 100%);
     width: 100%;
     display: flex;
     justify-content: center;
@@ -168,7 +175,8 @@ header {
     flex-direction: column;
     gap: 25px;
     z-index: 1000;
-    position: relative;
+    position: fixed;
+    top: 0;
 }
 
 nav:nth-child(1) {
@@ -181,8 +189,9 @@ nav:nth-child(1) {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 50%;
+    width: 100%;
     gap: 50px;
+    max-width: 59%;
 }
 
 .btn-toggle {
@@ -191,17 +200,21 @@ nav:nth-child(1) {
 
 .cont-links {
     display: flex;
-    gap: 25px;
+    gap: 50px;
     font-size: 16px;
     letter-spacing: 2px;
 }
 
 .cont-links a {
     color: white;
-    font-weight: 900;
-    letter-spacing: 3px;
+    font-weight: 700;
+    letter-spacing: 5px;
     transition: color 0.5s;
-    font-size: 18px;
+    font-size: 16px;
+}
+
+.cont-links a:last-child {
+    letter-spacing: 2px;
 }
 
 .cont-links a:hover {
@@ -210,22 +223,27 @@ nav:nth-child(1) {
 
 .login {
     display: flex;
-    padding-right: 45px;
+    padding-right: 85px;
 }
 
 .login .nav-ul {
-    gap: 30px;
+    gap: 35px;
     position: relative;
 }
 
 .login .nav-ul a {
-    font-weight: 300;
+    font-weight: 100;
     font-size: 16px;
     position: relative;
+    letter-spacing: 0.3px;
 }
 
 .login .nav-ul li:nth-child(1) a {
-    font-weight: 400;
+    font-weight: 300;
+}
+
+.login .nav-ul li:nth-child(3) a {
+    margin-left: 5px;
 }
 
 .login .nav-ul li:first-child a::before {
@@ -234,13 +252,10 @@ nav:nth-child(1) {
     height: 21px;
     background: white;
     position: absolute;
-    right: -15px;
+    right: -20px;
     opacity: 0.5;
 }
 
-.login .nav-li:hover > .sub-ul {
-    transform: translateY(0px);
-}
 
 .login .nav-ul li:last-child a img:first-child {
     width: 16px;
@@ -256,7 +271,6 @@ nav:nth-child(1) {
 .nav-logo {
     display: inline-flex;
     align-items: center;
-    height: 80px;
 }
 
 .nav-logo svg {
@@ -266,7 +280,7 @@ nav:nth-child(1) {
 }
 
 .nav-logo img {
-    max-width: 350px;
+    max-width: 365px;
 }
 
 .logo-text {
@@ -310,7 +324,7 @@ nav:nth-child(1) {
     display: flex;
     align-items: center;
     width: 100%;
-    max-width: 1250px;
+    max-width: 1305px;
     justify-content: space-between;
 }
 
@@ -318,22 +332,8 @@ nav:nth-child(1) {
     height: 100%;
 }
 
-.nav-li:hover > .sub-ul {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(-58px);
-}
-
-.nav-li:hover > .nav-link {
-    color: white;
-}
-
-.nav-li:hover > .nav-link svg {
-    transform: rotate(180deg);
-}
-
 .nav-link {
-    padding: 20px 0;
+    padding: 22px 0;
     font-size: 18px;
 }
 
@@ -344,25 +344,21 @@ nav:nth-child(1) {
     display: flex;
     align-items: center;
     gap: 2px;
-    font-size: 20px;
+    font-size: 18px;
+    letter-spacing: 0.3px;
 }
 
 .nav-link:hover {
     color: white;
 }
 
-.nav-link:hover > svg {
-    color: rgb(236, 195, 11);
-    transform: rotate(180deg);
-}
-
 .nav-link svg {
-    height: 19.2px;
+    height: 18.2px;
     vertical-align: middle;
 }
 
 .nav-link img {
-    width: 8px;
+    width: 6px;
     margin-left: 7px;
 }
 
@@ -396,12 +392,48 @@ nav:nth-child(1) {
     display: none;
 }
 
+
+
+
+
+@media (min-width: 992px) {
+    .login .nav-li:hover > .sub-ul {
+        transform: translateY(0px);
+    }
+    .nav-li:hover > .sub-ul {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(-58px);
+    }
+
+    .nav-li:hover > .nav-link {
+        color: white;
+    }
+    .nav-li:hover > .nav-link svg {
+        transform: rotate(180deg);
+    }
+    .nav-link:hover > svg {
+        color: rgb(236, 195, 11);
+        transform: rotate(180deg);
+    }
+}
+
 @media (max-width: 1500px) {
-    header {
-        gap: 5px;
+    header[data-v-e065371e] {
+        gap: 30px;
     }
     .login {
         padding-right: 0;
+    }
+
+    .nav-logo img {
+        max-width: 309px;
+    }
+    .links {
+        gap: 30px;
+    }
+    .cont-links {
+        gap: 20px;
     }
 }
 
@@ -440,8 +472,9 @@ nav:nth-child(1) {
         gap: 25px;
     }
 }
+
 @media (max-width: 991px) {
-    .nav-container {
+    .nav-movil {
         background: rgb(24, 31, 41);
         gap: 40px;
         display: flex;
@@ -459,7 +492,7 @@ nav:nth-child(1) {
         flex-direction: column;
         overflow-y: scroll;
     }
-    header.my-class .nav-container {
+    header.my-class {
         transform: translateX(0%);
     }
     .back {
@@ -473,7 +506,7 @@ nav:nth-child(1) {
         transform: translateX(250%);
         transition: transform 0.5s;
     }
-    header.my-class .back {
+    .back.my-class {
         transform: translateX(0%);
     }
     .login .nav-ul li:first-child a[data-v-e065371e]::before {
@@ -494,8 +527,16 @@ nav:nth-child(1) {
         z-index: 1;
     }
 
-    .links[data-v-e065371e] {
+    .links {
         width: 100%;
+    }
+
+    .btn_movil[data-v-e065371e] {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: linear-gradient(rgb(24,31,41) 0%,rgb(24,31,41) 46%,rgba(24,31,41,0) 100%);
+        padding: 15px 35px 35px;
     }
 
     .btn-toggle {
@@ -505,6 +546,9 @@ nav:nth-child(1) {
         display: flex;
         flex-direction: column;
         gap: 5px;
+        position: absolute;
+        right: 35px;
+        z-index: 10000;
     }
 
     .btn-toggle div {
@@ -532,7 +576,7 @@ nav:nth-child(1) {
         padding: 10px 18px;
     }
 
-    .nav-li:hover > .sub-ul {
+    .nav-li a:focus ~ .sub-ul {
         margin-top: 10px;
         opacity: 1;
         visibility: visible;
@@ -548,10 +592,31 @@ nav:nth-child(1) {
         gap: 25px;
         width: 100%;
     }
+    header .nav-logo {
+        display: none;
+    }
+    nav {
+        gap: 35px;
+        flex-direction: column-reverse;
+    }
+    .nav-container {
+        justify-content: flex-end;
+    }
+    .links  {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        gap: 50px;
+        max-width: 100%;
+    }
 }
 @media (max-width: 425px){
         .nav-logo img {
             max-width: 204px;
+        }
+        .btn_movil   {
+            padding: 25px 22px 35px;
         }
     }
 </style>

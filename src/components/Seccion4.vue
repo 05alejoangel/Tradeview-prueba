@@ -23,27 +23,19 @@
   </script>
   
   <style scoped>
-    .sec-links {
-
-        padding: 80px;
-
-        background: #181F29;
-
-        display: flex;
-
-        flex-direction: column;
-
-        gap: 50px;
-}
-
-.sec-links .title {
-
+.sec-links{
+    padding: 80px;
+    background: #181F29;
+    display: flex;
+    flex-direction: column;
+    gap: 85px;
 }
 
 .sec-links .title h2 {
     color: white;
     text-align: center;
     font-size: 30px;
+    line-height: 45px;
 }
 
 .sec-links .links::before {
@@ -68,29 +60,33 @@
 .links .btn_ {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 25px;
     align-items: center;
 }
 
 .links .btn_ p {
     color: white;
-    font-weight: 300;
+    font-weight: 200;
     text-align: center;
+    font-size: 18px;
+    line-height: 26px;
 }
 
 .links .btn_ a {
     z-index: 2;
-    font-size: 18px;
+    font-size: 20px;
     display: inline-block;
     text-align: center;
     width: 100%;
-    max-width: 221px;
-    letter-spacing: -0.3px;
+    max-width: 246px;
+    letter-spacing: 0.3px;
     font-weight: 400;
     padding: 11px 18px;
     border-radius: 2px;
+    line-height: 27px;
     position: relative;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 10px, rgba(0, 0, 0, 0) 0px 3px 6px;
+    border-radius: 0;
 }
 
 .links .btn_ a:hover {

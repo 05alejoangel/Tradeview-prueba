@@ -1,31 +1,29 @@
 <template>
-    <div>
-      <section class="banner">
-            <div class="content">
+    <section class="banner">
+        <div class="content">
+            <div class="img_">
+                <div></div>
+            </div>
+            <div class="descript">
                 <div class="img_">
                     <div></div>
                 </div>
-                <div class="descript">
-                    <div class="img_">
-                        <div></div>
+                <div class="cont">
+                    <p>Tradeview’s <strong>CommuniTraders</strong> software lets our partners provide value-added copy trading to their clients.</p>
+                </div>
+                <div class="links">
+                    <div class="btn_">
+                        <p>Free Download for Tradeview Users </p>
+                        <a class="bttn" href="#">Contact your Broker</a>
                     </div>
-                    <div class="cont">
-                        <p>Tradeview’s <strong>CommuniTraders</strong> software lets our partners provide value-added copy trading to their clients.</p>
-                    </div>
-                    <div class="links">
-                        <div class="btn_">
-                            <p>Free Download for Tradeview Users </p>
-                            <a class="bttn" href="#">Contact your Broker</a>
-                        </div>
-                        <div class="btn_">
-                            <p>Don’t have a Tradeview Account yet?</p>
-                            <a class="bttn-dark" href="#">Get a Free Demo</a>
-                        </div>
+                    <div class="btn_">
+                        <p>Don’t have a Tradeview Account yet?</p>
+                        <a class="bttn-dark" href="#">Get a Free Demo</a>
                     </div>
                 </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
   </template>
   
   <script setup>
@@ -38,8 +36,12 @@
 ========================================= */
 
 .banner {
-    margin-top: -216px;
+    position: sticky;
+    top: 0px;
+    z-index: -1;
+    margin-top: -60px;
 }
+
 
 .banner .content {
     display: flex;
@@ -51,9 +53,9 @@
 }
 
 .banner .content .img_ div {
-    background-image: url('../assets/images/banner.jpg');
+    background-image: url(/src/assets/images/banner.jpg);
     width: 100%;
-    padding-top: 128%;
+    padding-top: 129%;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
@@ -66,12 +68,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 100px;
-    gap: 65px;
+    padding: 153px 100px;
+    gap: 85px;
 }
 
 .banner .descript .img_ {
-    max-width: 493px;
+    max-width: 415px;
     width: 100%;
 }
 
@@ -127,7 +129,7 @@
 .links .btn_ {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
     align-items: center;
 }
 
@@ -135,18 +137,18 @@
     color: white;
     font-weight: 300;
     text-align: center;
+    font-size: 18px;
 }
-
 .links .btn_ a {
     z-index: 2;
-    font-size: 18px;
+    font-size: 19px;
     display: inline-block;
     text-align: center;
     width: 100%;
-    max-width: 221px;
-    letter-spacing: -0.3px;
+    max-width: 238px;
+    letter-spacing: .3px;
     font-weight: 400;
-    padding: 11px 18px;
+    padding: 13px 19px;
     border-radius: 2px;
     position: relative;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 10px, rgba(0, 0, 0, 0) 0px 3px 6px;
@@ -256,7 +258,25 @@ a.bttn-dark:focus {
 
 @media (max-width: 1500px) {
     .banner {
-        margin-top: -142px;
+        margin-top: 0px;
+    }
+    .banner .content .img_ {
+        display: flex;
+        width: 50%;
+    }
+    .banner .descript .img_ div {
+        width: 100%;
+        padding-top: 18%;
+    }
+    .banner .descript{
+        width: 56%;
+        background: rgb(24, 31, 41);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 153px 50px;
+        gap: 50px;
     }
 }
 
@@ -264,8 +284,8 @@ a.bttn-dark:focus {
     .banner .descript {
         padding: 35px;
     }
-    .banner {
-        margin-top: -111px;
+    .banner .descript{
+        padding: 85px 50px;
     }
 }
 
@@ -292,9 +312,12 @@ a.bttn-dark:focus {
 }
 
 @media (max-width: 991px) {
+    .banner {
+        margin-top: -47px;
+    }
     .banner .content .img_ {
         display: flex;
-        width: 41%;
+        width: 56%;
     }
     .banner .descript {
         gap: 15px;
@@ -377,7 +400,19 @@ a.bttn-dark:focus {
         margin-top: -95px;
     }
     .banner {
-        margin-top: -45%;
+        margin-top: -242px;
+        position: relative;
+    }
+    .banner .content .img_ {
+        display: flex;
+        width: 100%;
+    }
+}
+
+@media (max-width: 580px) {
+    .banner[data-v-faf10041] {
+        margin-top: -180px;
+        position: relative;
     }
 }
 
@@ -390,6 +425,10 @@ a.bttn-dark:focus {
     }
     .banner .descript {
         margin-top: -40px;
+    }
+    .banner[data-v-faf10041] {
+        margin-top: -122px;
+        position: relative;
     }
 }
 

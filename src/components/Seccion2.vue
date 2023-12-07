@@ -40,21 +40,22 @@
   </script>
   
   <style scoped>
-    .card {
+.card {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding: 100px;
-    gap: 25px;
+    gap: 35px;
+    background: white;
 }
 
 .card .item {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    max-width: 495px;
-    padding: 25px;
+    gap: 15px;
+    max-width: 520px;
+    padding: 30px;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 13px 8px;
     height: 260px;
 }
@@ -63,14 +64,16 @@
     width: 50px;
 }
 
-.card h2 {
+.card h2[data-v-faf3b655] {
     font-size: 18px;
     color: rgb(255, 0, 0);
+    font-weight: 700;
+    margin-bottom: 3px;
 }
 
 .card p {
     font-size: 18px;
-    color: rgb(54, 54, 54);
+    color: rgb(50 50 50);
     font-weight: 300;
 }
 

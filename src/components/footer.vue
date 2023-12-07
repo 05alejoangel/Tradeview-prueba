@@ -201,7 +201,7 @@
     .contact-us .social {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 20px;
     }
 
     .contact-us .social h2 {
@@ -213,7 +213,7 @@
 
     .contact-us .social .item {
         display: flex;
-        gap: 10px;
+        gap: 20px;
         align-items: center;
     }
 
@@ -222,9 +222,9 @@
         align-items: center;
     }
 
-    .contact-us .social a img {
-        width: 18px;
-        height: 18px;
+    .contact-us .social a img[data-v-0d5f32b1] {
+        width: 25px;
+        height: 25px;
     }
 
     .mail_links {
@@ -333,7 +333,11 @@
     .mail_links .links a {
         font-size: 15px;
         color: white;
-        font-weight: 300;
+        font-weight: 200;
+    }
+
+    .mail_links .links a strong {
+        font-weight: 500;
     }
 
     .mail_links .links .history-platform .item {
@@ -539,6 +543,9 @@
     @media (max-width: 425px) {
         footer {
             padding: 35px;
+        }
+        .mail_links .mail {
+            padding: 20px 15px;
         }
     }
   </style>
