@@ -410,7 +410,7 @@ a.bttn-dark:focus {
 }
 
 @media (max-width: 580px) {
-    .banner[data-v-faf10041] {
+    .banner {
         margin-top: -180px;
         position: relative;
     }
@@ -426,7 +426,7 @@ a.bttn-dark:focus {
     .banner .descript {
         margin-top: -40px;
     }
-    .banner[data-v-faf10041] {
+    .banner{
         margin-top: -122px;
         position: relative;
     }

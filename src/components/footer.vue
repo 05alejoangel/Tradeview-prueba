@@ -222,7 +222,7 @@
         align-items: center;
     }
 
-    .contact-us .social a img[data-v-0d5f32b1] {
+    .contact-us .social a img {
         width: 25px;
         height: 25px;
     }
@@ -535,7 +535,7 @@
     }
 
     @media (max-width: 500px) {
-        .mail_links .mail[data-v-4896eafd] {
+        .mail_links .mail{
             padding: 20px;
         }
     }

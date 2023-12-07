@@ -64,7 +64,7 @@
     width: 50px;
 }
 
-.card h2[data-v-faf3b655] {
+.card h2 {
     font-size: 18px;
     color: rgb(255, 0, 0);
     font-weight: 700;

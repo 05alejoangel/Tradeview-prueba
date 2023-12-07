@@ -419,7 +419,7 @@
   }
   
   @media (max-width: 1500px) {
-      header[data-v-e065371e] {
+      header {
           gap: 30px;
       }
       .login {
@@ -509,7 +509,7 @@
       .back.my-class {
           transform: translateX(0%);
       }
-      .login .nav-ul li:first-child a[data-v-e065371e]::before {
+      .login .nav-ul li:first-child a::before {
           display: none;
       }
       .nav-ul, .login .nav-ul, .cont-links {
