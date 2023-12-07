@@ -531,7 +531,7 @@
           width: 100%;
       }
   
-      .btn_movil[data-v-e065371e] {
+      .btn_movil {
           display: flex;
           justify-content: space-between;
           align-items: center;
