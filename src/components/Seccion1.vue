@@ -266,7 +266,7 @@ a.bttn-dark:focus {
     }
     .banner .descript .img_ div {
         width: 100%;
-        padding-top: 18%;
+        padding-top: 27%;
     }
     .banner .descript{
         width: 56%;
@@ -275,7 +275,7 @@ a.bttn-dark:focus {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 153px 50px;
+        padding: 210px 100px;
         gap: 50px;
     }
 }
